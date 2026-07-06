@@ -1,0 +1,123 @@
+<div align="center">
+
+# 💡 EduPilot AI
+
+### GenAI-powered ERP Copilot for Students
+
+Talk to your academic data, naturally.
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-8B5CF6?style=for-the-badge)](https://EduPilot-ai-obxu.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+
+[Live App](https://EduPilot-ai-obxu.vercel.app) · [Report Bug](../../issues) · [Request Feature](../../issues)
+
+</div>
+
+---
+
+## 📖 About
+
+**EduPilot AI** reimagines the typical student dashboard by adding a conversational AI layer on top of academic data. Instead of clicking through menus to find attendance, marks, or class timings, students can simply _ask_ — in plain English — and get instant, accurate answers powered by a **Text-to-SQL + RAG pipeline**.
+
+Built as a full-stack project to demonstrate real-world skills: authentication, live data fetching, responsive UI design, and integrating LLMs with structured data.
+
+## ✨ Features
+
+- 📊 **Interactive Dashboard** — at-a-glance view of attendance %, exam records, and subject performance with animated charts
+- 📅 **Attendance Tracker** — subject-wise breakdown with safe/low status indicators
+- 📈 **Marks & Grades** — Internal 1, Internal 2, and External marks per subject, visualized with progress bars
+- 🗓️ **Timetable** — weekly class schedule with "today's class" highlighting
+- 🤖 **AI Chat Assistant** — ask questions about your academic data in natural language (e.g. _"What's my DBMS attendance?"_), answered via a Text-to-SQL + RAG pipeline
+- 🎙️ **Voice Input** — speak your questions to the AI chat using the Web Speech API
+- 🔐 **Secure Auth** — JWT-based login, with a one-click **"Try Demo"** button for recruiters (no credentials needed)
+- 🌗 **Polished Dark UI** — custom dark theme with neon glow accents, fully responsive across desktop and mobile
+
+## 🛠️ Tech Stack
+
+| Layer        | Technology                                                              |
+| ------------ | ----------------------------------------------------------------------- |
+| **Frontend** | Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion, Recharts |
+| **Backend**  | FastAPI (Python)                                                        |
+| **Database** | Supabase (PostgreSQL)                                                   |
+| **AI / LLM** | OpenRouter — Text-to-SQL + RAG pipeline                                 |
+| **Auth**     | JWT                                                                     |
+| **Voice**    | Web Speech API                                                          |
+| **Hosting**  | Vercel (frontend) · Railway (backend)                                   |
+
+## 🚀 Live Demo
+
+|                  |                                                                    |
+| ---------------- | ------------------------------------------------------------------ |
+| **App**          | [EduPilot-ai-obxu.vercel.app](https://EduPilot-ai-obxu.vercel.app) |
+| **API**          | [EduPilot-ai-production.up.railway.app](http://localhost:8000)     |
+| **Quick access** | Click **"Try Demo"** on the login page — no signup needed          |
+
+> **Note:** The backend runs on a free-tier server, which goes to sleep after inactivity. The first request after a while may take 5–10 seconds while the server wakes up — the UI shows a loading message during this time.
+
+## 📸 Screenshots
+
+<!-- Add screenshots here — drag and drop images into this section on GitHub, or use:
+<p align="center">
+  <img src="screenshots/dashboard.png" width="800" alt="Dashboard" />
+  <img src="screenshots/chat.png" width="800" alt="AI Chat" />
+</p>
+-->
+
+## 🧠 How the AI Chat Works
+
+1. User asks a question in natural language (typed or spoken)
+2. The query is interpreted and converted into a structured SQL query against the student's academic data (**Text-to-SQL**)
+3. Relevant context (notices, FAQs) is retrieved via a **RAG (Retrieval-Augmented Generation)** pipeline where needed
+4. The LLM (via OpenRouter) generates a natural-language response grounded in the retrieved data
+
+## 🏗️ Project Structure
+
+```
+EduPilot-ai/
+├── frontend/              # Next.js app
+│   └── app/
+│       ├── dashboard/
+│       ├── attendance/
+│       ├── marks/
+│       ├── timetable/
+│       ├── chat/
+│       └── login/
+├── backend/                # FastAPI app
+│   ├── auth/
+│   ├── routes/
+│   └── ...
+└── README.md
+```
+
+## ⚙️ Getting Started Locally
+
+### Prerequisites
+
+- Node.js 18+
+- Python 3.10+
+- A Supabase project (PostgreSQL)
+- An OpenRouter API key
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Backend
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+Create a `.env` file in `backend/` with your Supabase and OpenRouter credentials.
+
+## 📬 Connect
+
+Built by **Rohit Raj** — feel free to reach out or open an issue if you spot something!
